@@ -65,5 +65,52 @@ module.exports = {
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
+  },
+  publish:{ //部署配置
+    remoteDir:'/xxx/xxx/xxx/target',//远程上传目录(服务器)
+    localSourcePath:"",//本地需要上传的资源路径（默认项目根目录下的dist文件夹）
+    serverConfig:{//服务器验证信息
+        host: '',
+        username: '***',
+        password: '***',
+        algorithms: {
+            "kex": [
+              "diffie-hellman-group1-sha1",
+              "ecdh-sha2-nistp256",
+              "ecdh-sha2-nistp384",
+              "ecdh-sha2-nistp521",
+              "diffie-hellman-group-exchange-sha256",
+              "diffie-hellman-group14-sha1"
+            ],
+            "cipher": [
+              "3des-cbc",
+              "aes128-cbc",
+              "aes192-cbc",
+              "aes256-cbc",
+              "aes128-ctr",
+              "aes192-ctr",
+              "aes256-ctr",
+              "aes128-gcm@openssh.com",
+              "aes256-gcm@openssh.com",
+              "arcfour",
+              "arcfour128",
+              "arcfour256",
+              "blowfish-cbc",
+              "cast128-cbc",
+            ],
+            "serverHostKey": [
+              "ssh-rsa",
+              "ecdsa-sha2-nistp256",
+              "ecdsa-sha2-nistp384",
+              "ecdsa-sha2-nistp521"
+            ],
+            "hmac": [
+              "hmac-sha2-256",
+              "hmac-sha2-512",
+              "hmac-sha1"
+            ]
+        }
+    }
   }
+
 }
